@@ -14,7 +14,7 @@ install:
 
 script:
   - docker build -t teknoradio/youtube .
-  - docker run --rm --entrypoint='' --name youtube teknoradio/youtube /bin/bash -c "which curl" | grep -q /usr/bin/curl
+  - docker run --rm --entrypoint="" --name youtube teknoradio/youtube /bin/bash -c "which ffmpeg" | grep -q /usr/local/bin/ffmpeg
   - py.test --connection=docker -v
 
 notifications:
