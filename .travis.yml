@@ -14,7 +14,7 @@ install:
 
 script:
   - docker build -t teknoradio/youtube .
-  - docker run --rm --name youtube teknoradio/youtube /bin/bash -c "which curl" | grep -q /usr/bin/curl
+  - docker run --rm --entrypoint='' --name youtube teknoradio/youtube /bin/bash -c "which curl" | grep -q /usr/bin/curl
   - py.test --connection=docker -v
 
 notifications:
